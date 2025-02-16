@@ -1,5 +1,4 @@
-import { IFormFieldProps, IAuthFormProps } from '../types'
-import { useForm } from 'react-hook-form'
+import { IFormFieldProps } from '../types'
 
 export const Field: React.FC<IFormFieldProps> = ({
   name,

@@ -1,7 +1,6 @@
 import { Button } from '@/ui/button'
 import { ChatInput } from '@/components/chat/chatInput'
 import { Messages } from '@/components/chat/messages'
-import Form from 'next/form'
 
 const chatDataMock = {
   name: 'John Doe',
