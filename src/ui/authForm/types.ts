@@ -1,4 +1,5 @@
-import { FieldErrors, RegisterOptions, UseFormRegister } from 'react-hook-form'
+import { FormEventHandler } from 'react'
+import { FieldErrors, FormState, RegisterOptions, SubmitHandler, UseFormRegister } from 'react-hook-form'
 
 export interface IFormField {
   name: string
@@ -15,12 +16,14 @@ export interface IFormFieldProps extends IFormField {
 
 export interface IAuthFormProps {
   fields: IFormField[]
-
-  action: (formData: FormData) => Promise<void>
+  action: NonNullable<string | ((formData: FormData) => void | Promise<void>) | undefined>
   title: string
   linkText: string
   linkHref: string
   linkLabel: string
+  register: UseFormRegister<FormValues>
+  handleSubmit: FormEventHandler<HTMLFormElement>
+  errors: FieldErrors<FormValues>
 }
 
 export interface IAuthFormLinkProps {

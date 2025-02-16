@@ -2,30 +2,17 @@
 
 import Form from 'next/form'
 import { Field } from './field'
-import { IFormFieldProps, IAuthFormProps, FormValues } from './types'
+import { IAuthFormProps, FormValues } from './types'
 import { SubmitButton } from './submitButton'
 import { AuthFormLink } from './link'
-import { Path, useForm, UseFormRegister, SubmitHandler } from 'react-hook-form'
 
-export const AuthForm: React.FC<IAuthFormProps> = ({ fields, action, title, linkText, linkHref, linkLabel }) => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<FormValues>({
-    mode: 'onChange',
-  })
-
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data)
-  }
+export const AuthForm: React.FC<IAuthFormProps> = ({ fields, action, title, linkText, linkHref, linkLabel, register, handleSubmit, errors }) => {
 
   return (
     <Form
       className="mx-auto my-auto sm:w-[400px] w-[80%] flex flex-col gap-6 p-10 rounded-md bg-white/20"
       action={action}
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit}
     >
       <h1 className="text-2xl font-bold text-center">{title}</h1>
 
