@@ -1,5 +1,5 @@
 'use server'
 
-export async function signup(formData: FormData) {}
+export async function signup() {}
 
-export async function login(formData: FormData) {}
+export async function login() {}

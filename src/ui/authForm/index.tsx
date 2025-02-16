@@ -2,12 +2,21 @@
 
 import Form from 'next/form'
 import { Field } from './field'
-import { IAuthFormProps, FormValues } from './types'
+import { IAuthFormProps } from './types'
 import { SubmitButton } from './submitButton'
 import { AuthFormLink } from './link'
 
-export const AuthForm: React.FC<IAuthFormProps> = ({ fields, action, title, linkText, linkHref, linkLabel, register, handleSubmit, errors }) => {
-
+export const AuthForm: React.FC<IAuthFormProps> = ({
+  fields,
+  action,
+  title,
+  linkText,
+  linkHref,
+  linkLabel,
+  register,
+  handleSubmit,
+  errors,
+}) => {
   return (
     <Form
       className="mx-auto my-auto sm:w-[400px] w-[80%] flex flex-col gap-6 p-10 rounded-md bg-white/20"
